@@ -1,6 +1,18 @@
 import random
 import string
 
+def generate_random_string(length):
+    return 0
+
+# Функция для ввода данных вручную
+def input_data_manually():
+    return 0
+
+
+# Функция для генерации случайных данных
+def input_data_random():
+    return 0
+
 
 def main_menu():
     print("Меню:")
