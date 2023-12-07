@@ -13,6 +13,21 @@ def input_data_manually():
 def input_data_random():
     return 0
 
+def vigenere_cipher(text, key):
+    encrypted_text = ""
+    key_length = len(key)
+    # Проходим по каждому символу исходного текста
+    for i, char in enumerate(text):
+        if char.isalpha():  # Проверка, является ли символ буквой
+            shift = ord(key[i % key_length].lower()) - ord('a')
+            if char.isupper():  # Если символ - прописная буква, вычисляем зашифрованную прописную букву
+                encrypted_char = chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+            else:  # Если символ - строчная буква, вычисляем зашифрованную строчную букву
+                encrypted_char = chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
+            encrypted_text += encrypted_char
+        else:
+            encrypted_text += char
+    return encrypted_text
 
 def main_menu():
     print("Меню:")
